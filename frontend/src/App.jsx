@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
+import Home from "./pages/Home"
 import NGODashboard from "./pages/NGODashboard"
 import VolunteerDashboard from "./pages/VolunteerDashboard"
 import RegisterVolunteer from "./pages/RegisterVolunteer"
@@ -9,6 +10,7 @@ export default function App() {
       <nav style={nav}>
         <span style={logo}>🆘 ResQAI</span>
         <div style={{ display: "flex", gap: "20px" }}>
+          <Link to="/home" style={logo}>🆘 ResQAI</Link>
           <Link to="/" style={link}>NGO Portal</Link>
           <Link to="/volunteer" style={link}>Volunteer Portal</Link>
           <Link to="/register" style={link}>Register as Volunteer</Link>
