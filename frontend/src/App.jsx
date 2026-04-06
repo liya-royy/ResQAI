@@ -7,7 +7,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <nav style={nav}>
-        <span style={logo}>🌿 VolunteerConnect Kerala</span>
+        <span style={logo}>🆘 ResQAI</span>
         <div style={{ display: "flex", gap: "20px" }}>
           <Link to="/" style={link}>NGO Portal</Link>
           <Link to="/volunteer" style={link}>Volunteer Portal</Link>
