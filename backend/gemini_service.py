@@ -1,22 +1,18 @@
-import google.generativeai as genai
+from google import genai
 import os
 import json
 from dotenv import load_dotenv
 
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel("gemini-2.0-flash")
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def match_volunteers(need_description, volunteers):
-    # Build a readable list of volunteers for the prompt
     volunteer_list = "\n".join([
         f"- ID: {v['id']}, Name: {v['name']}, Skills: {v['skills']}, "
         f"District: {v['district']}, Available: {v['available']}"
         for v in volunteers
     ])
 
-    # This prompt frames Gemini as a decision-making assistant, not just a filter
-    # The three analysis bullets are what make the matching genuinely intelligent
     prompt = f"""
 You are an intelligent assistant helping NGO coordinators in Kerala 
 respond faster to community crises. Your job is to understand what 
@@ -44,13 +40,22 @@ Return a JSON array of the top 5 best-matched volunteers. For each include:
 Return ONLY valid JSON. No explanation, no markdown, no backticks.
 """
 
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt
+    )
     text = response.text.strip()
-    
-    # Clean up if model accidentally wraps in markdown code fences
+
     if text.startswith("```"):
         text = text.split("```")[1]
         if text.startswith("json"):
             text = text[4:]
-    
-    return json.loads(text.strip())
+
+    matches = json.loads(text.strip())
+    seen = set()
+    unique_matches = []
+    for match in matches:
+        if match["id"] not in seen:
+            seen.add(match["id"])
+            unique_matches.append(match)
+    return unique_matches

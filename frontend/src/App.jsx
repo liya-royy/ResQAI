@@ -10,15 +10,16 @@ export default function App() {
       <nav style={nav}>
         <span style={logo}>🆘 ResQAI</span>
         <div style={{ display: "flex", gap: "20px" }}>
-          <Link to="/home" style={logo}>🆘 ResQAI</Link>
-          <Link to="/" style={link}>NGO Portal</Link>
+          <Link to="/" style={logo}>🆘 ResQAI</Link>
+          <Link to="/ngo" style={link}>NGO Portal</Link>
           <Link to="/volunteer" style={link}>Volunteer Portal</Link>
           <Link to="/register" style={link}>Register as Volunteer</Link>
         </div>
       </nav>
-      <div style={{ background: "#f0fdf4", minHeight: "100vh", padding: "0 0 40px 0" }}>
+      <div style={{ minHeight: "100vh", padding: "0 0 40px 0" }}>
         <Routes>
-          <Route path="/" element={<NGODashboard />} />
+          <Route path="/" element={<Home />} /> 
+          <Route path="/ngo" element={<NGODashboard />} />
           <Route path="/volunteer" element={<VolunteerDashboard />} />
           <Route path="/register" element={<RegisterVolunteer />} />
         </Routes>

@@ -9,7 +9,7 @@ export default function Home() {
         <h1 style={h1}>Kerala's AI<br />Volunteer <span style={{color:"#1d9e75"}}>Coordinator</span></h1>
         <p style={sub}>NGOs post a need in plain language. Gemini reads it, understands it, and surfaces the right volunteers — in under 10 seconds.</p>
         <div style={btns}>
-          <button style={btnPrimary} onClick={() => navigate("/")}>I'm an NGO Coordinator</button>
+          <button style={btnPrimary} onClick={() => navigate("/ngo")}>I'm an NGO Coordinator</button>
           <button style={btnSecondary} onClick={() => navigate("/register")}>I want to Volunteer</button>
         </div>
       </div>
