@@ -59,7 +59,7 @@ npm run dev
 ## Live Links
 
 - Backend: [Cloud Run URL]
-- Frontend: [Netlify URL]
+- Frontend: [Firebase URL]
 
 ## Team
 
