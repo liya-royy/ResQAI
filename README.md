@@ -22,7 +22,7 @@ Gemini 2.0 Flash is the core intelligence of ResQ AI. When an NGO coordinator po
 
 Screenshots of Gemini API responses and Cloud Console logs are in the `/proof` folder.
 
-![AI Proof](proof/gemini-response.png)
+![AI Proof](./frontend/src/assets/ngo.png)
 
 ## Screenshots
 
