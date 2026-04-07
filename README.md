@@ -32,8 +32,7 @@ Screenshots of Gemini API responses and Cloud Console logs are in the `/proof` f
 
 ## Demo Video
 
-Upload your demo video to Google Drive and paste the shareable link here (max 3 minutes). [Watch Demo](https://drive.google.com/file/d/1pVg5_FXXqbYwiDtG7CI4SbO_eXICIXJC/view?usp=drivesdk)
-
+Upload your demo video to Google Drive and paste the shareable link here (max 3 minutes). [Watch Demo](https://drive.google.com/file/d/1cJw79j9xMCYaF5IvnBYZ6-VO3AsGKERm/view?usp=drivesdk)
 ## Installation Steps
 ```bash
 # Clone the repository
