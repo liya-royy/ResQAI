@@ -1,8 +1,7 @@
 import { useState } from "react"
 import axios from "axios"
 
-const API = "http://localhost:5000"
-
+const API = "https://resqai-110106214707.asia-south1.run.app"
 const districts = [
   "Alappuzha","Ernakulam","Thrissur","Kozhikode","Kottayam",
   "Palakkad","Thiruvananthapuram","Kollam","Pathanamthitta",
