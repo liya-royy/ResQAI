@@ -26,7 +26,7 @@ Screenshots of Gemini API responses and Cloud Console logs are in the `/proof` f
 
 ## Screenshots
 
-![NGO Dashboard](proof/ngo-dashboard.png)
+![NGO Dashboard](./frontend/src/assets/ngo.png)
 ![Volunteer Matching](./frontend/src/assets/volunteermatch.png)
 
 ## Demo Video
