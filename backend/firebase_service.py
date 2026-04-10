@@ -1,9 +1,20 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
+import os
+import json
+from google.cloud import secretmanager
 
-# This reads the secret key file to authenticate with Firebase
-cred = credentials.Certificate("serviceAccountKey.json")
-firebase_admin.initialize_app(cred)
+def get_secret():
+    client = secretmanager.SecretManagerServiceClient()
+    name = "projects/ai-built-492513/secrets/serviceAccountKey/versions/latest"
+    response = client.access_secret_version(request={"name": name})
+    return json.loads(response.payload.data.decode("UTF-8"))
+
+if not firebase_admin._apps:
+    secret = get_secret()
+    cred = credentials.Certificate(secret)
+    firebase_admin.initialize_app(cred)
+
 db = firestore.client()
 
 def get_all_volunteers():
@@ -19,7 +30,6 @@ def get_all_needs():
 
 def add_need(data):
     ref = db.collection("needs").add(data)
-    # Return the auto-generated document ID so the frontend can reference this need
     return ref[1].id
 
 def update_need_matches(need_id, matches):
