@@ -1,10 +1,13 @@
-import vertexai
-from vertexai.generative_models import GenerativeModel
 import os
 import json
+from google import genai
+from google.genai import types
 
-# Initialize Vertex AI with your project
-vertexai.init(project="ai-built-492513", location="us-central1")
+client = genai.Client(
+    vertexai=True,
+    project="ai-built-492513",
+    location="us-central1",
+)
 
 def match_volunteers(need_description, volunteers):
     volunteer_list = "\n".join([
@@ -40,8 +43,10 @@ Return a JSON array of the top 5 best-matched volunteers. For each include:
 Return ONLY valid JSON. No explanation, no markdown, no backticks.
 """
 
-    model = GenerativeModel("gemini-1.5-flash")
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt,
+    )
     text = response.text.strip()
 
     if text.startswith("```"):
