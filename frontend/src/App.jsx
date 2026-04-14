@@ -8,7 +8,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <nav style={nav}>
-        <span style={logo}>🆘 ResQAI</span>
+        
         <div style={{ display: "flex", gap: "20px" }}>
           <Link to="/" style={logo}>🆘 ResQAI</Link>
           <Link to="/ngo" style={link}>NGO Portal</Link>
