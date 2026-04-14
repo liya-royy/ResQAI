@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 
 // This will change to the Cloud Run URL once Liya deploys — Dilshan coordinates this
-const API = "https://resqai-110106214707.asia-south1.run.app"
+const API = "https://resqai-110106214707.asia-south1.run.app/volunteers"
 
 export default function NGODashboard() {
   const [description, setDescription] = useState("")
