@@ -4,7 +4,7 @@ import os
 import json
 
 # Initialize Vertex AI with your project
-vertexai.init(project="ai-built-492513", location="asia-south1")
+vertexai.init(project="ai-built-492513", location="us-central1")
 
 def match_volunteers(need_description, volunteers):
     volunteer_list = "\n".join([
